@@ -1,10 +1,7 @@
-package com.example.domain.model;
+  package com.example.domain.dao;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document(collection = "ITEmployee")
 public class Employee {
-
+	
 	private String id;
 	private String firstName;
 	private String lastName;
@@ -54,10 +51,8 @@ public class Employee {
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", location=" + location
-				+ ", designation=" + designation + ", age=" + age + ", salary=" + salary + "]";
+	public Employee() {
+		
 	}
 	public Employee(String id, String firstName, String lastName, String location, String designation, int age,
 			int salary) {
@@ -70,8 +65,11 @@ public class Employee {
 		this.age = age;
 		this.salary = salary;
 	}
-	public Employee() {
-		
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", location=" + location
+				+ ", designation=" + designation + ", age=" + age + ", salary=" + salary + "]";
 	}
+	
 
-  }
+}

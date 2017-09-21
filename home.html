@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>MongoDB/Spring Boot Application</title>
+        <style>
+            table, th, td {
+               border: 1px solid black;
+               border-spacing: 0px;
+            }
+            th, td {
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>First Name</th>
+                    <th>LastName</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="emp : ${empList}">
+                    <td th:text="${emp.id}"></td>
+                    <td th:text="${emp.firstName}"></td>
+                    <td th:text="${emp.lastName}"></td>
+                    <td th:text="${emp.salary}"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+          
+        </table>
+        <br />
+        <hr/>
+        <br/><br/><br/>
+        <h2>Add Car</h2>
+        <form action="/addCar" method="POST">
+            Make <input type="text" id="make" name="make" /><br />
+            Model <input type="text" id="model" name="model" /><br />
+            Description <textarea rows="5" cols="70" id="description" name="description" /><br />
+            <input type="submit" />
+        </form>
+        <hr/><br/><br/>
+        <h2>Search for cars</h2>
+        
+      
+    </body>
+</html>

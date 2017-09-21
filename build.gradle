@@ -1,0 +1,49 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.6.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	
+	// Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+    
+    //cucumber
+    compile group: 'info.cukes', name: 'cucumber-java', version: '1.2.5'
+    compile group: 'info.cukes', name: 'cucumber-junit', version: '1.2.5'
+    compile group: 'info.cukes', name: 'cucumber-core', version: '1.2.5'
+    compile group: 'info.cukes', name: 'cucumber-picocontainer', version: '1.2.5'
+    compile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.2'
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+	
+	
+	
+	
+	
+	
+	
+	
+}
